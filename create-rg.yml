@@ -1,6 +1,7 @@
 ---
-- tasks:
+- hosts: localhost
+  tasks:
   - name: Create a resource group
     azure_rm_resourcegroup:
-      name: linux-rg
-      location: eastus
+      name: "{{ rg_name }}"
+      location: "{{ region }}"
