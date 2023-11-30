@@ -9,11 +9,11 @@
         resource_group: "{{ resource_group_name }}"
         name: "{{ vm_name }}"
         started: no
-      when: power = "off"
+      when: power == "off"
 
     - name: Start virtual machine
       azure.azcollection.azure_rm_virtualmachine:
         resource_group: "{{ resource_group_name }}"
         name: "{{ vm_name }}"
         started: yes
-      when: power = "on"
+      when: power == "on"
